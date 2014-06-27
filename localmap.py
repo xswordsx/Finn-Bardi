@@ -26,18 +26,23 @@ class LocalMap:
         self.tiles = pygame.sprite.Group()
         self.walls = pygame.sprite.Group()
         self.player = pygame.sprite.Group()
-        self.npcs = []
+        self.npcs = pygame.sprite.Group()
 
         self.map_image = pygame.image.load(self.level_path)
         x, y = self.map_image.get_size()
         self.map_size = (x * block_size, y * block_size)
 
+        screen = pygame.display.set_mode(self.map_size)
+
         self.screen = screen
+
+        self.__generate_map__()
 
     def update(self, dt=(pygame.time.Clock().tick(60) / 1000.)):
         self.tiles.update()
         self.walls.update()
-        # self.player.update()
+        self.player.update()
+        self.npcs.update()
 
         pygame.display.flip()
 
@@ -58,7 +63,7 @@ class LocalMap:
 
         t = Tile(x * self.block_size,
                  y * self.block_size,
-                 path ,
+                 path,
                  self.screen,
                  (self.block_size, self.block_size))
 
