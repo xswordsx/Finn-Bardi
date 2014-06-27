@@ -39,3 +39,14 @@ class Player(pygame.sprite.Sprite):
             pass
 
     def inflict_damage(self):
+        # pending formula
+        pass
+
+    def take_damage(self):
+        # pending formula
+        pass
+
+    def collect_loot(selfm, monster):
+        # XP from enemy gets transfered to player
+        # player is able to grab items
+        pass
