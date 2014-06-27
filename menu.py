@@ -68,6 +68,16 @@ class Menu:
         self.number_fields = len(self._list)
         self.create_structure()        
 
+    def _initial_draw(self):
+        menu = pygame.Surface((self.menu_width, self.menu_height))
+        menu.fill(self.background_color)
+        selected_rect = self.boxes[self.selected_item].selected_rect
+        pygame.draw.rect(menu,self.selection_color,selected_rect)
+
+        for i in range(self.number_fields):
+            menu.blit(self.boxes[i].field,self.boxes[i].field_rect)
+        self.dest_surface.blit(menu,self.drawing_position)
+
     def update(self):
         for event in pygame.event.get():
             if event.type == KEYDOWN:
