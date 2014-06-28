@@ -6,4 +6,3 @@ class Item:
         self._stats = stats
         self._equippable_on = equippable_on
         self._img_path = img_path
-

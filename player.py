@@ -37,7 +37,7 @@ class Player(pygame.sprite.Sprite):
                       'health': 80,
                       'mana': 40}
 
-    def move(self, dir, speed = 1):
+    def move(self, dir, speed=1):
         # self._last = self.copy()
         if Player.__DIRECTION.get(dir):
             self.position[0] += Player.__DIRECTION[dir][0] * 1
@@ -61,6 +61,5 @@ class Player(pygame.sprite.Sprite):
         # player is able to grab items
         pass
 
-
     def update(self):
-      self.game.blit(self._img, self.position)
+        self.game.blit(self._img, self.position)

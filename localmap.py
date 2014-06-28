@@ -44,7 +44,7 @@ class LocalMap:
         key = pygame.key.get_pressed()
         speed = 0.4
         if key[pygame.K_LEFT]:
-            self._player.move('left',speed )
+            self._player.move('left', speed)
         elif key[pygame.K_RIGHT]:
                 self._player.move('right', speed)
         elif key[pygame.K_UP]:
@@ -66,12 +66,9 @@ class LocalMap:
         #     self.rect = self.last
         # self.game.screen.blit(self.image, (self.rect.x, self.rect.y))
 
-
-
         # collide = pygame.sprite.spritecollide
         # for cell in collide(self.player, self.walls, False):
         #     pass
-
     def __generate_map__(self):
         for j in range(self.map_image.get_height()):
             for i in range(self.map_image.get_width()):
@@ -80,9 +77,9 @@ class LocalMap:
                     print(tuple(current_pixel))
                     if self._pallette[tuple(current_pixel)]['group'] == 'player':
                         self._player = Player(i * self.block_size,
-                                             j * self.block_size,
-                                             'Finn',
-                                             self.screen)
+                                              j * self.block_size,
+                                              'Finn',
+                                              self.screen)
                     self.__import_pixel__(tuple(current_pixel), i, j)
         if self._player == None:
             print('No player')

@@ -24,7 +24,7 @@ class StateMachine:
         self.__top = self.__stack[0]
 
     def start(self):
-        
+
         pygame.display.flip()
 
         self.__running = True
