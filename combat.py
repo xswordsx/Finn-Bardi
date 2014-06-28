@@ -1,6 +1,7 @@
 from state_machine import StateMachine
 import pygame
 
+
 class Combat:
 
     def __init__(self, game, monster, player):
@@ -39,7 +40,7 @@ class Combat:
         # It should return a value, indicating
         # The action that needs to be executed
         # to the player
-        pass 
+        pass
 
     def player_choice(self, choice):
         # This will be the menu, from which

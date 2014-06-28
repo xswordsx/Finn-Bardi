@@ -14,7 +14,7 @@ class Tile(pygame.sprite.Sprite):
         self.__image.convert()
 
         self.__surface = surface
-        
+
         self.rect = self.__image.get_rect()
         self.rect.topleft = self.__position
 
